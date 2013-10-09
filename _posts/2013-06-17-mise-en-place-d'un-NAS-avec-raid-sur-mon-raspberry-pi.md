@@ -1,6 +1,6 @@
 ---
 layout: post
-category : raspberry
+category : rapsberry pi
 tagline: ""
 tags : [raid 1, NAS, raspberry pi]
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-category : lessons
+category : scripting
 tagline: ""
 tags : [scripting, lua, c++, luna]
 ---
