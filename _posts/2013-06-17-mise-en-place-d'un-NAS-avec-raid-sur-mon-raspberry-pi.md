@@ -297,7 +297,7 @@ Note : pensez à vérifier que la commande mail fonctionne chez vous :D
 
 # Sauvegarde des données
 
-Pour ma part, j'opte pour un logiciel sur mon client windows : [http://www.clubic.com/telecharger-fiche11081-cobian-backup.html](cobian backup).
+Pour ma part, j'opte pour un logiciel sur mon client windows : (cobian backup)[http://www.clubic.com/telecharger-fiche11081-cobian-backup.html].
 
 # Maintenance, test de tolérance aux pannes
 
