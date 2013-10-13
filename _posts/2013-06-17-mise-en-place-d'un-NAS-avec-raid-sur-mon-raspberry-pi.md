@@ -665,7 +665,8 @@ Enfin, on n'oublie pas de sauvegarder sa conf pour le prochain reboot :
 
 ***
 
->*Migration commentaires*
+>*Migration commentaires :*
+>
 >
 >> soulfire82, le 11/09/2013 à 22:29
 >> Bonjour,
