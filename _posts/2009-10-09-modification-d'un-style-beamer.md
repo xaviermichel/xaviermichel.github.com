@@ -6,7 +6,7 @@ tags : [latex, beamer]
 ---
 {% include JB/setup %}
 
-Le "problème" avec beamer, c'est que les styles sont prédéfinis et que l'on souhaiterait parfois ajouter une touche perso, par exemple le numéro de diapositive sur le thème warsaw. 
+Le "problème" avec beamer, c'est que les styles sont prédéfinis et que l'on souhaiterait parfois ajouter une touche perso, par exemple le numéro de diapositive sur le thème warsaw.
 
 C'est l'objet de cette astuce !
 
@@ -16,7 +16,7 @@ Où allons nous placer notre ajout ? C'est bien la première question à se pose
 
 Pour ma part je pense qu'il est judicieux de placer notre barre d'information au pied de la diapo ce qui pourrait donner :
 
-![Thème avant](/assets/posts/beamer_after.png)
+![Thème après](/assets/posts/beamer_after.png)
 
 _PS : ne faites pas attention aux fautes d'orthographe sur le slide :p_
 
@@ -27,17 +27,17 @@ Notre barre de base est donc composée de quatre éléments, nous allons commenc
 Par exemple pour le premier élément cela donne quelque chose comme :
 
     \setbeamercolor*{author in head/foot}{parent=palette tertiary}
-	
+
 Rien de très compliqué donc, on définit notre élément et on utilise la palette pré-définie. La difficulté vient ensuite, pour placer notre élément :
 
     \defbeamertemplate*{footline}{infolines theme}
     {
-    	\leavevmode%
-    	\hbox{%
-    		\begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    	\leavevmode
+    	\hbox{
+    		\begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}
     			\usebeamerfont{author in head/foot}\insertshortauthor
-    		\end{beamercolorbox}%	
-    	}%
+    		\end{beamercolorbox}
+    	}
     }
 
 Détaillons maintenant :
