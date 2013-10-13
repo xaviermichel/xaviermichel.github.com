@@ -665,7 +665,7 @@ Enfin, on n'oublie pas de sauvegarder sa conf pour le prochain reboot :
 
 ***
 
-> Migration commentaires
+>*Migration commentaires*
 >
 >> soulfire82, le 11/09/2013 à 22:29
 >> Bonjour,
@@ -676,6 +676,8 @@ Enfin, on n'oublie pas de sauvegarder sa conf pour le prochain reboot :
 >> Avec 500Go j'en ai pour 8h a chaque fois!
 >> 
 >> Sinon super tuto merci!
+>
+> ***
 >
 >> Xavier, le 12/09/2013 à 13:37
 >> Bonjour et merci pour ce retour smile
