@@ -41,197 +41,189 @@ Nous avons nos disques dur fraîchement achetés, il convient maintenant de les 
 
 Nous allons maintenant repérer nos disques :
 
-```bash
-root@debian:/home/xavier# fdisk -l
 
-Disk /dev/sda: 8589 MB, 8589934592 bytes
-255 heads, 63 sectors/track, 1044 cylinders
-Units = cylinders of 16065 * 512 = 8225280 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-Disk identifier: 0x000db52d
+    root@debian:/home/xavier# fdisk -l
 
-   Device Boot      Start         End      Blocks   Id  System
-/dev/sda1   *           1         996     7993344   83  Linux
-Partition 1 does not end on cylinder boundary.
-/dev/sda2             996        1045      392193    5  Extended
-/dev/sda5             996        1045      392192   82  Linux swap / Solaris
+    Disk /dev/sda: 8589 MB, 8589934592 bytes
+    255 heads, 63 sectors/track, 1044 cylinders
+    Units = cylinders of 16065 * 512 = 8225280 bytes
+    Sector size (logical/physical): 512 bytes / 512 bytes
+    I/O size (minimum/optimal): 512 bytes / 512 bytes
+    Disk identifier: 0x000db52d
 
-Disk /dev/sdb: 8589 MB, 8589934592 bytes
-255 heads, 63 sectors/track, 1044 cylinders
-Units = cylinders of 16065 * 512 = 8225280 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-Disk identifier: 0x00000000
+       Device Boot      Start         End      Blocks   Id  System
+    /dev/sda1   *           1         996     7993344   83  Linux
+    Partition 1 does not end on cylinder boundary.
+    /dev/sda2             996        1045      392193    5  Extended
+    /dev/sda5             996        1045      392192   82  Linux swap / Solaris
 
-Disk /dev/sdb doesn't contain a valid partition table
+    Disk /dev/sdb: 8589 MB, 8589934592 bytes
+    255 heads, 63 sectors/track, 1044 cylinders
+    Units = cylinders of 16065 * 512 = 8225280 bytes
+    Sector size (logical/physical): 512 bytes / 512 bytes
+    I/O size (minimum/optimal): 512 bytes / 512 bytes
+    Disk identifier: 0x00000000
 
-Disk /dev/sdc: 8589 MB, 8589934592 bytes
-255 heads, 63 sectors/track, 1044 cylinders
-Units = cylinders of 16065 * 512 = 8225280 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-Disk identifier: 0x00000000
+    Disk /dev/sdb doesn't contain a valid partition table
 
-Disk /dev/sdc doesn't contain a valid partition table
-root@debian:/home/xavier#
-```
-	
-	
+    Disk /dev/sdc: 8589 MB, 8589934592 bytes
+    255 heads, 63 sectors/track, 1044 cylinders
+    Units = cylinders of 16065 * 512 = 8225280 bytes
+    Sector size (logical/physical): 512 bytes / 512 bytes
+    I/O size (minimum/optimal): 512 bytes / 512 bytes
+    Disk identifier: 0x00000000
+
+    Disk /dev/sdc doesn't contain a valid partition table
+    root@debian:/home/xavier#
+
+    
+    
 Vous pouvez repérer vos nouveaux disques. Il s'agit ici de `/dev/sdb` et `/dev/sdc`.
 
 Nous allons préparer ces disques pour notre besoin : avec un partition raid linux.
 
-```bash
-root@debian:/home/xavier# fdisk /dev/sdb
-Device contains neither a valid DOS partition table, nor Sun, SGI or OSF disklabel
-Building a new DOS disklabel with disk identifier 0xb2cdac70.
-Changes will remain in memory only, until you decide to write them.
-After that, of course, the previous content won't be recoverable.
+    root@debian:/home/xavier# fdisk /dev/sdb
+    Device contains neither a valid DOS partition table, nor Sun, SGI or OSF disklabel
+    Building a new DOS disklabel with disk identifier 0xb2cdac70.
+    Changes will remain in memory only, until you decide to write them.
+    After that, of course, the previous content won't be recoverable.
 
-Warning: invalid flag 0x0000 of partition table 4 will be corrected by w(rite)
+    Warning: invalid flag 0x0000 of partition table 4 will be corrected by w(rite)
 
-WARNING: DOS-compatible mode is deprecated. It's strongly recommended to
-         switch off the mode (command 'c') and change display units to
-         sectors (command 'u').
+    WARNING: DOS-compatible mode is deprecated. It's strongly recommended to
+    		 switch off the mode (command 'c') and change display units to
+    		 sectors (command 'u').
 
-Command (m for help): n
-Command action
-   e   extended
-   p   primary partition (1-4)
-p
-Partition number (1-4): 1
-First cylinder (1-1044, default 1):
-Using default value 1
-Last cylinder, +cylinders or +size{K,M,G} (1-1044, default 1044):
-Using default value 1044
+    Command (m for help): n
+    Command action
+       e   extended
+       p   primary partition (1-4)
+    p
+    Partition number (1-4): 1
+    First cylinder (1-1044, default 1):
+    Using default value 1
+    Last cylinder, +cylinders or +size{K,M,G} (1-1044, default 1044):
+    Using default value 1044
 
-Command (m for help): t
-Selected partition 1
-Hex code (type L to list codes): fd
-Changed system type of partition 1 to fd (Linux raid autodetect)
+    Command (m for help): t
+    Selected partition 1
+    Hex code (type L to list codes): fd
+    Changed system type of partition 1 to fd (Linux raid autodetect)
 
-Command (m for help): p
+    Command (m for help): p
 
-Disk /dev/sdb: 8589 MB, 8589934592 bytes
-255 heads, 63 sectors/track, 1044 cylinders
-Units = cylinders of 16065 * 512 = 8225280 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-Disk identifier: 0xb2cdac70
+    Disk /dev/sdb: 8589 MB, 8589934592 bytes
+    255 heads, 63 sectors/track, 1044 cylinders
+    Units = cylinders of 16065 * 512 = 8225280 bytes
+    Sector size (logical/physical): 512 bytes / 512 bytes
+    I/O size (minimum/optimal): 512 bytes / 512 bytes
+    Disk identifier: 0xb2cdac70
 
-   Device Boot      Start         End      Blocks   Id  System
-/dev/sdb1               1        1044     8385898+  fd  Linux raid autodetect
+       Device Boot      Start         End      Blocks   Id  System
+    /dev/sdb1               1        1044     8385898+  fd  Linux raid autodetect
 
-Command (m for help): w
-The partition table has been altered!
+    Command (m for help): w
+    The partition table has been altered!
 
-Calling ioctl() to re-read partition table.
-Syncing disks.
-root@debian:/home/xavier#
-```
-	
+    Calling ioctl() to re-read partition table.
+    Syncing disks.
+    root@debian:/home/xavier#
+
+    
 > Si un partition FAT32 existe déjà sur le support, il faut bien entendu la supprimer (commande d).
 
 Il faut refaire exactement la même chose avec le second disque du raid.
 
 Si on joue la commande fdisk, on constate que nos disques dont prêts !
 
-```bash
-   Device Boot      Start         End      Blocks   Id  System
-/dev/sdb1               1        1044     8385898+  fd  Linux raid autodetect
-[...]
-   Device Boot      Start         End      Blocks   Id  System
-/dev/sdc1               1        1044     8385898+  fd  Linux raid autodetect
-```
-	
+
+       Device Boot      Start         End      Blocks   Id  System
+    /dev/sdb1               1        1044     8385898+  fd  Linux raid autodetect
+    [...]
+       Device Boot      Start         End      Blocks   Id  System
+    /dev/sdc1               1        1044     8385898+  fd  Linux raid autodetect
+
+    
 # Installation et configuration du logiciel de raid
 
 J'ai choisi le populaire mdadm, l'installation en est d'autant plus simple :
 
-```bash
-root@debian:/home/xavier# apt-get install mdadm
-```
-	
+
+    root@debian:/home/xavier# apt-get install mdadm
+
+    
 Ensuite, on lance la construction de l'array (/dev/md0) et on attend la fin...
 
-```bash
-root@debian:/home/xavier# mdadm --create --verbose /dev/md0 --level=1 --raid-devices=2 /dev/sdb1 /dev/sdc1
-mdadm: Note: this array has metadata at the start and
-    may not be suitable as a boot device.  If you plan to
-    store '/boot' on this device please ensure that
-    your boot-loader understands md/v1.x metadata, or use
-    --metadata=0.90
-mdadm: size set to 8384862K
-Continue creating array? y
-mdadm: Defaulting to version 1.2 metadata
-mdadm: array /dev/md0 started.
-root@debian:/home/xavier# watch -n 1 cat /proc/mdstat
-Personalities : [raid1]
-md0 : active raid1 sdc1[1] sdb1[0]
-      8384862 blocks super 1.2 [2/2] [UU]
-      [==>..................]  resync = 12.7% (1066176/8384862) finish=1.3min speed=88848K/sec
+    root@debian:/home/xavier# mdadm --create --verbose /dev/md0 --level=1 --raid-devices=2 /dev/sdb1 /dev/sdc1
+    mdadm: Note: this array has metadata at the start and
+    	may not be suitable as a boot device.  If you plan to
+    	store '/boot' on this device please ensure that
+    	your boot-loader understands md/v1.x metadata, or use
+    	--metadata=0.90
+    mdadm: size set to 8384862K
+    Continue creating array? y
+    mdadm: Defaulting to version 1.2 metadata
+    mdadm: array /dev/md0 started.
+    root@debian:/home/xavier# watch -n 1 cat /proc/mdstat
+    Personalities : [raid1]
+    md0 : active raid1 sdc1[1] sdb1[0]
+    	  8384862 blocks super 1.2 [2/2] [UU]
+    	  [==>..................]  resync = 12.7% (1066176/8384862) finish=1.3min speed=88848K/sec
 
-unused devices: <none>
-root@debian:/home/xavier#
-```
+    unused devices: <none>
+    root@debian:/home/xavier#
 
 > Sur mon rapsberry et pour deux clés de 64Go, cette opération a pris une heure (environ 17M/sec pour une clé déclarée avec une vitesse d'écriture à 20Mo/s).
 
 Enfin, nos DD sont fin prêts !
 
-```bash
-root@debian:/home/xavier# cat /proc/mdstat
-Personalities : [raid1]
-md0 : active raid1 sdc1[1] sdb1[0]
-      8384862 blocks super 1.2 [2/2] [UU]
 
-unused devices: <none>
-root@debian:/home/xavier#
-```
+    root@debian:/home/xavier# cat /proc/mdstat
+    Personalities : [raid1]
+    md0 : active raid1 sdc1[1] sdb1[0]
+    	  8384862 blocks super 1.2 [2/2] [UU]
+
+    unused devices: <none>
+    root@debian:/home/xavier#
 
 On peut également obtenir les informations via la commande :
 
-```bash
-root@debian:/home/xavier# cat /proc/mdstat
-Personalities : [raid1]
-md0 : active raid1 sdc1[1] sdb1[0]
-      8384862 blocks super 1.2 [2/2] [UU]
+    root@debian:/home/xavier# cat /proc/mdstat
+    Personalities : [raid1]
+    md0 : active raid1 sdc1[1] sdb1[0]
+    	  8384862 blocks super 1.2 [2/2] [UU]
 
-unused devices: <none>
-root@debian:/home/xavier# mdadm --detail /dev/md0
-/dev/md0:
-        Version : 1.2
-  Creation Time : Wed Apr 17 20:49:34 2013
-     Raid Level : raid1
-     Array Size : 8384862 (8.00 GiB 8.59 GB)
-  Used Dev Size : 8384862 (8.00 GiB 8.59 GB)
-   Raid Devices : 2
-  Total Devices : 2
-    Persistence : Superblock is persistent
+    unused devices: <none>
+    root@debian:/home/xavier# mdadm --detail /dev/md0
+    /dev/md0:
+    		Version : 1.2
+      Creation Time : Wed Apr 17 20:49:34 2013
+    	 Raid Level : raid1
+    	 Array Size : 8384862 (8.00 GiB 8.59 GB)
+      Used Dev Size : 8384862 (8.00 GiB 8.59 GB)
+       Raid Devices : 2
+      Total Devices : 2
+    	Persistence : Superblock is persistent
 
-    Update Time : Wed Apr 17 20:50:59 2013
-          State : clean
- Active Devices : 2
-Working Devices : 2
- Failed Devices : 0
-  Spare Devices : 0
+    	Update Time : Wed Apr 17 20:50:59 2013
+    		  State : clean
+     Active Devices : 2
+    Working Devices : 2
+     Failed Devices : 0
+      Spare Devices : 0
 
-           Name : debian:0  (local to host debian)
-           UUID : 9c268e33:336a16eb:f1d3b427:e080e44d
-         Events : 32
+    		   Name : debian:0  (local to host debian)
+    		   UUID : 9c268e33:336a16eb:f1d3b427:e080e44d
+    		 Events : 32
 
-    Number   Major   Minor   RaidDevice State
-       0       8       17        0      active sync   /dev/sdb1
-       1       8       33        1      active sync   /dev/sdc1
-root@debian:/home/xavier#
-```
+    	Number   Major   Minor   RaidDevice State
+    	   0       8       17        0      active sync   /dev/sdb1
+    	   1       8       33        1      active sync   /dev/sdc1
+    root@debian:/home/xavier#
 
 Il est maintenant très important de sauvegarder la configuration de notre array. Cela se fait simplement via la commande :
 
-```bash
-mdadm --detail --scan --verbose > /etc/mdadm/mdadm.conf
-```
+    mdadm --detail --scan --verbose > /etc/mdadm/mdadm.conf
 
 N'hésitons pas à jeter un œil à /etc/mdadm/mdadm.conf pour vérifier que le contenu nous parrait correct ;) .
 
@@ -241,32 +233,28 @@ J'ai choisi de ne pas utiliser lvm. Bien que cela vende du rêve, je n'en ai pas
 
 Notre array (/dev/md0) étant prêt, nous pouvons formater les disques pour notre besoin. J'ai choisi l'ext4.
 
-```bash
-mkfs.ext4 /dev/md0 -m 1
-```
+    mkfs.ext4 /dev/md0 -m 1
+
 
 Nous allons désormais monter notre /dev/md0 et rendre persistant le montage via la fstab. Notre politique de sécurité sera que notre raid sera accessible aux utilisateurs du groupe "raid" uniquement.
 
-```bash
-# on créé le groupe
-addgroup raid
-# on tour à tour chaque utilisateur qui aura le droit d'accès au raid
-adduser xavier raid
-# on créé le point de montage
-mkdir /media/raid
-# on monte notre array pour voir si cela fonctionne
-mount /dev/md0 /media/raid
-# on applique les droits au point de montage
-chown root:raid /media/raid
-chmod 770 /media/raid
-```
+    # on créé le groupe
+    addgroup raid
+    # on tour à tour chaque utilisateur qui aura le droit d'accès au raid
+    adduser xavier raid
+    # on créé le point de montage
+    mkdir /media/raid
+    # on monte notre array pour voir si cela fonctionne
+    mount /dev/md0 /media/raid
+    # on applique les droits au point de montage
+    chown root:raid /media/raid
+    chmod 770 /media/raid
 
 Pour rendre le montage permanant, il est nécessaire de l'ajouter dans /etc/fstab (ajouter la ligne suivante)
 
-```bash
-/dev/md0   /media/raid   ext4      defaults,nofail     0   0
-```
-	
+    /dev/md0   /media/raid   ext4      defaults,nofail     0   0
+
+    
 L'option nofail permet de ne pas bloquer le démarrage du système en cas d'erreur.
 
 Enfin, faisons un petit reboot pour vérifier que tout se mets bien en place au démarrage !
@@ -275,25 +263,20 @@ Enfin, faisons un petit reboot pour vérifier que tout se mets bien en place au 
 
 Afin de simplifier l'utilisation du NAS (et comme je suis tout seul sur mon réseau local), j'ai fait une configuration très basique pour l'ajout d'un point de partage. Par exemple :
 
-```properties
-[Pi-common]
-	comment = Partage public
-	path = /media/raid/common
-	browseable = yes
-	writeable = yes
-	guest ok = yes
-	read only = no
-```
+    [Pi-common]
+    	comment = Partage public
+    	path = /media/raid/common
+    	browseable = yes
+    	writeable = yes
+    	guest ok = yes
+    	read only = no
 
 Mais on peut ajuster un peu les droits. Pour cela, il faut avoir définit le mot de passe samba d'un utilisateur (commande smbpasswd), par exemple :
 
-```bash
-smbpasswd -a xavier
-```
-	
+    smbpasswd -a xavier
+    
 Une fois le mot de passe défini, on enregistre le point de partage pour un utilisateur spécifique :
 
-```properties
     [Pi-secret]
     	comment = Mon dossier secret
     	path = /media/raid/secret
@@ -301,16 +284,14 @@ Une fois le mot de passe défini, on enregistre le point de partage pour un util
     	browseable = no
     	guest ok = no
     	read only = no
-```
+
 
 # Mise en place de surveillance d'un disque défectueux.
 
 Pour la surveillance, j'ai mis un job dans ma crontab qui m'envoi un mail en cas d'alerte :
 
-```bash
-# Vérifier l'état du raid toutes les heures
-0 * * * * /bin/grep 'UU' /proc/mdstat || /usr/bin/mail -s "[ALERTE] Raid en erreur sur $(hostname)" toto@rome.biz < /proc/mdstat
-```
+    # Vérifier l'état du raid toutes les heures
+    0 * * * * /bin/grep 'UU' /proc/mdstat || /usr/bin/mail -s "[ALERTE] Raid en erreur sur $(hostname)" toto@rome.biz < /proc/mdstat
 
 Note : pensez à vérifier que la commande mail fonctionne chez vous :D
 
@@ -326,47 +307,43 @@ Ces tests ont été faits sur une VM avec un debian et une configuration identiq
 
 Un des disque est en erreur
 
-```bash
-root@debian:/media# mdadm --detail /dev/md0
-/dev/md0:
-		Version : 1.2
-  Creation Time : Fri Apr 19 19:49:46 2013
-	 Raid Level : raid1
-	 Array Size : 4087475 (3.90 GiB 4.19 GB)
-  Used Dev Size : 4087475 (3.90 GiB 4.19 GB)
-   Raid Devices : 2
-  Total Devices : 2
-	Persistence : Superblock is persistent
- 
-	Update Time : Fri Apr 19 20:18:20 2013
-		  State : clean, degraded
- Active Devices : 1
-Working Devices : 1
- Failed Devices : 1
-  Spare Devices : 0
- 
-		   Name : debian:0  (local to host debian)
-		   UUID : e24cccb5:6ad3c0be:94487917:fd011ebf
-		 Events : 42
- 
-	Number   Major   Minor   RaidDevice State
-	   0       8       17        0      active sync   /dev/sdb1
-	   1       0        0        1      removed
- 
-	   1       8       33        -      faulty spare   /dev/sdc1
-```
+    root@debian:/media# mdadm --detail /dev/md0
+    /dev/md0:
+    		Version : 1.2
+      Creation Time : Fri Apr 19 19:49:46 2013
+    	 Raid Level : raid1
+    	 Array Size : 4087475 (3.90 GiB 4.19 GB)
+      Used Dev Size : 4087475 (3.90 GiB 4.19 GB)
+       Raid Devices : 2
+      Total Devices : 2
+    	Persistence : Superblock is persistent
+     
+    	Update Time : Fri Apr 19 20:18:20 2013
+    		  State : clean, degraded
+     Active Devices : 1
+    Working Devices : 1
+     Failed Devices : 1
+      Spare Devices : 0
+     
+    		   Name : debian:0  (local to host debian)
+    		   UUID : e24cccb5:6ad3c0be:94487917:fd011ebf
+    		 Events : 42
+     
+    	Number   Major   Minor   RaidDevice State
+    	   0       8       17        0      active sync   /dev/sdb1
+    	   1       0        0        1      removed
+     
+    	   1       8       33        -      faulty spare   /dev/sdc1
 
 On peut recroiser avec le fichier /etc/mdadm/mdadm.conf pour être sûr de notre analyse.
 
 
 Cette commande nous a permis d'identifier le disque en erreur. Une autre solution aurait été :
 
-```bash
-root@debian:/media# cat /proc/mdstat
-Personalities : [linear] [multipath] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10]
-md0 : active raid1 sdb1[0] sdc1[1](F)
-	  4087475 blocks super 1.2 [2/1] [U_]
-```
+    root@debian:/media# cat /proc/mdstat
+    Personalities : [linear] [multipath] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10]
+    md0 : active raid1 sdb1[0] sdc1[1](F)
+    	  4087475 blocks super 1.2 [2/1] [U_]
 
 La surveillance que nous avons mis en place précédemment nous remonte des erreurs. L'un des disques est mort. On peut :
 - Toujours accéder aux données (réplication)
@@ -379,10 +356,8 @@ Dans tous les cas, je vous conseille de remplacer le disque sinon vous perdrez t
 
 Pour cela, c'est très simple. Il nous suffit d'aller dans /media/raid et de vérifier que l'on a encore les données présentes.
 
-```bash
-xavier@debian:~$ ls /media/raid/
-lost+found  toto.txt
-```
+    xavier@debian:~$ ls /media/raid/
+    lost+found  toto.txt
 
 Nous avons toujours accès à nos données !
 
@@ -391,103 +366,92 @@ Nous avons toujours accès à nos données !
 
 On retire le disque précédent d'un point de vue logiciel :
 
-```bash
-root@debian:/home/xavier# mdadm --manage /dev/md0 --remove /dev/sdc1
-mdadm: hot removed /dev/sdc1 from /dev/md0
-```
-	
+    root@debian:/home/xavier# mdadm --manage /dev/md0 --remove /dev/sdc1
+    mdadm: hot removed /dev/sdc1 from /dev/md0
+    
 Ensuite seulement, j'éteins ma machine et je monte un disque de capacité identique au précédent.
 
 La commande fdisk permet de confirmer que le disque dur remplacé est bien présent :
 
-```bash
-root@debian:/home/xavier# fdisk -l
-[...]
-Disk /dev/sdc doesn't contain a valid partition table
- 
-   Device Boot      Start         End      Blocks   Id  System
-/dev/sdb1               1        1044     8385898+  fd  Linux raid autodetect
-[...]
-Disk /dev/md0 doesn't contain a valid partition table
-```
+    root@debian:/home/xavier# fdisk -l
+    [...]
+    Disk /dev/sdc doesn't contain a valid partition table
+     
+       Device Boot      Start         End      Blocks   Id  System
+    /dev/sdb1               1        1044     8385898+  fd  Linux raid autodetect
+    [...]
+    Disk /dev/md0 doesn't contain a valid partition table
 
 On reformate maintenant le nouveau disque, voir préparation des disques dur et Formatage et montage des disques (en ne faisant bien évidemment que l'étape de montage !, pas le mkfs !).
 
-```bash
-root@debian:/home/xavier# fdisk /dev/sdc
-Device contains neither a valid DOS partition table, nor Sun, SGI or OSF disklabel
-Building a new DOS disklabel with disk identifier 0x36db354c.
-Changes will remain in memory only, until you decide to write them.
-After that, of course, the previous content won't be recoverable.
- 
-Warning: invalid flag 0x0000 of partition table 4 will be corrected by w(rite)
- 
-WARNING: DOS-compatible mode is deprecated. It's strongly recommended to
-		 switch off the mode (command 'c') and change display units to
-		 sectors (command 'u').
- 
-Command (m for help): n
-Command action
-   e   extended
-   p   primary partition (1-4)
-p
-Partition number (1-4): 1
-First cylinder (1-1044, default 1): 
-Using default value 1
-Last cylinder, +cylinders or +size{K,M,G} (1-1044, default 1044): 
-Using default value 1044
- 
-Command (m for help): t
-Selected partition 1
-Hex code (type L to list codes): fd
-Changed system type of partition 1 to fd (Linux raid autodetect)
- 
-Command (m for help): p
- 
-Disk /dev/sdc: 8589 MB, 8589934592 bytes
-255 heads, 63 sectors/track, 1044 cylinders
-Units = cylinders of 16065 * 512 = 8225280 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-Disk identifier: 0x36db354c
-```
+    root@debian:/home/xavier# fdisk /dev/sdc
+    Device contains neither a valid DOS partition table, nor Sun, SGI or OSF disklabel
+    Building a new DOS disklabel with disk identifier 0x36db354c.
+    Changes will remain in memory only, until you decide to write them.
+    After that, of course, the previous content won't be recoverable.
+     
+    Warning: invalid flag 0x0000 of partition table 4 will be corrected by w(rite)
+     
+    WARNING: DOS-compatible mode is deprecated. It's strongly recommended to
+    		 switch off the mode (command 'c') and change display units to
+    		 sectors (command 'u').
+     
+    Command (m for help): n
+    Command action
+       e   extended
+       p   primary partition (1-4)
+    p
+    Partition number (1-4): 1
+    First cylinder (1-1044, default 1): 
+    Using default value 1
+    Last cylinder, +cylinders or +size{K,M,G} (1-1044, default 1044): 
+    Using default value 1044
+     
+    Command (m for help): t
+    Selected partition 1
+    Hex code (type L to list codes): fd
+    Changed system type of partition 1 to fd (Linux raid autodetect)
+     
+    Command (m for help): p
+     
+    Disk /dev/sdc: 8589 MB, 8589934592 bytes
+    255 heads, 63 sectors/track, 1044 cylinders
+    Units = cylinders of 16065 * 512 = 8225280 bytes
+    Sector size (logical/physical): 512 bytes / 512 bytes
+    I/O size (minimum/optimal): 512 bytes / 512 bytes
+    Disk identifier: 0x36db354c
 
 Pour information, actuellement notre raid continu sur un seul disque (donc ne sert à rien).
 
-```bash
-root@debian:/home/xavier# cat /proc/mdstat
-Personalities : [linear] [multipath] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10] 
-md0 : active raid1 sdb1[0]
-	  8384862 blocks super 1.2 [2/1] [U_]
- 
-unused devices: <none>
-```
-
+    root@debian:/home/xavier# cat /proc/mdstat
+    Personalities : [linear] [multipath] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10] 
+    md0 : active raid1 sdb1[0]
+    	  8384862 blocks super 1.2 [2/1] [U_]
+     
+    unused devices: <none>
+    
 Ensuite, il faut relancer l'utilisation du disque nouvellement formaté :
 
-```bash
-root@debian:/home/xavier# mdadm --manage /dev/md0 --add /dev/sdc1
-mdadm: added /dev/sdc1
-root@debian:/home/xavier# cat /proc/mdstat
-Personalities : [linear] [multipath] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10] 
-md0 : active raid1 sdc1[2] sdb1[0]
-	  8384862 blocks super 1.2 [2/1] [U_]
-	  [======>..............]  recovery = 32.2% (2706560/8384862) finish=1.6min speed=58138K/sec
- 
-unused devices: <none>
-root@debian:/home/xavier# 
-```
+    root@debian:/home/xavier# mdadm --manage /dev/md0 --add /dev/sdc1
+    mdadm: added /dev/sdc1
+    root@debian:/home/xavier# cat /proc/mdstat
+    Personalities : [linear] [multipath] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10] 
+    md0 : active raid1 sdc1[2] sdb1[0]
+    	  8384862 blocks super 1.2 [2/1] [U_]
+    	  [======>..............]  recovery = 32.2% (2706560/8384862) finish=1.6min speed=58138K/sec
+     
+    unused devices: <none>
+    root@debian:/home/xavier# 
+
 
 Jusqu'au point où :
 
-```bash
-root@debian:/home/xavier# cat /proc/mdstat
-Personalities : [linear] [multipath] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10] 
-md0 : active raid1 sdb1[2] sdc1[1]
-	  8384862 blocks super 1.2 [2/2] [UU]
- 
-unused devices: <none>
-```
+    root@debian:/home/xavier# cat /proc/mdstat
+    Personalities : [linear] [multipath] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10] 
+    md0 : active raid1 sdb1[2] sdc1[1]
+    	  8384862 blocks super 1.2 [2/2] [UU]
+     
+    unused devices: <none>
 
 Notre raid est de nouveau fonctionnel !
 
@@ -497,11 +461,9 @@ Cette solution est a peu prêt équivalente à celle que nous avons testé juste
 
 Voici les partitions que j'ai avant de commencer mes tests :
 
-```bash
-xavier@rebian:~$df -h
-Sys. de fichiers	Taille	Uti.		Disp.	Uti%		Monté sur
-/dev/md0			3.9G		72M		3.8G		2%		/media/raid
-```
+    xavier@rebian:~$df -h
+    Sys. de fichiers	Taille	Uti.		Disp.	Uti%		Monté sur
+    /dev/md0			3.9G		72M		3.8G		2%		/media/raid
 
 Je retire maintenant l'un des disques dur. Le raid continue à fonctionner en utilisant un seul disque. Si je regarde le statut via mdadm, l'état du disque est à "removed".
 
@@ -511,10 +473,8 @@ Je prépare ensuite mon disque a changer (fdisk /dev/sdb).
 
 Enfin, je réinsère le disque fraîchement préparé dans l'array :
 
-```bash
-root@debian:/home/xavier# mdadm --manage /dev/md0 --add /dev/sdb1
-mdadm: added /dev/sdb1
-```
+    root@debian:/home/xavier# mdadm --manage /dev/md0 --add /dev/sdb1
+    mdadm: added /dev/sdb1
 
 Et on a plus qu'à attendre la fin de la reconstruction de l'array (voir cat /proc/mdstat).
 
@@ -526,51 +486,49 @@ Nos disques ont été formatés en utilisant tout l'espace libre, nous devons do
 
 Cela donne :
 
-```bash
-root@debian:/home/xavier# df -h
-Sys. de fichiers    Taille  Uti. Disp. Uti% Monté sur
-/dev/md0              3,9G   72M  3,8G   2% /media/raid
-root@debian:/home/xavier# mdadm -D /dev/md0
-/dev/md0:
-		Version : 1.2
-  Creation Time : Fri Apr 19 19:49:46 2013
-	 Raid Level : raid1
-	 Array Size : 4087475 (3.90 GiB 4.19 GB)
-  Used Dev Size : 4087475 (3.90 GiB 4.19 GB)
-   Raid Devices : 2
-  Total Devices : 2
-	Persistence : Superblock is persistent
- 
-	Number   Major   Minor   RaidDevice State
-	   3       8       17        0      active sync   /dev/sdb1
-	   2       8       33        1      active sync   /dev/sdc1
-root@debian:/home/xavier# mdadm --grow /dev/md0 -z max
-mdadm: component size of /dev/md0 has been set to 12280637K
-root@debian:/home/xavier# mdadm -D /dev/md0
-/dev/md0:
-		Version : 1.2
-  Creation Time : Fri Apr 19 19:49:46 2013
-	 Raid Level : raid1
-	 Array Size : 12280637 (11.71 GiB 12.58 GB)
-  Used Dev Size : 12280637 (11.71 GiB 12.58 GB)
-   Raid Devices : 2
-  Total Devices : 2
-	Persistence : Superblock is persistent
- 
-	Number   Major   Minor   RaidDevice State
-	   3       8       17        0      active sync   /dev/sdb1
-	   2       8       33        1      active sync   /dev/sdc1
-root@debian:/home/xavier# resize2fs /dev/md0
-resize2fs 1.41.12 (17-May-2010)
-Le système de fichiers de /dev/md0 est monté sur /media/raid ; le changement de taille doit être effectué en ligne
-old desc_blocks = 1, new_desc_blocks = 1
-En train d'effectuer un changement de taille en ligne de /dev/md0 vers 3070159 (4k) blocs.
-Le système de fichiers /dev/md0 a maintenant une taille de 3070159 blocs.
- 
-root@debian:/home/xavier# df -h
-Sys. de fichiers    Taille  Uti. Disp. Uti% Monté sur
-/dev/md0               12G   74M   12G   1% /media/raid
-```
+    root@debian:/home/xavier# df -h
+    Sys. de fichiers    Taille  Uti. Disp. Uti% Monté sur
+    /dev/md0              3,9G   72M  3,8G   2% /media/raid
+    root@debian:/home/xavier# mdadm -D /dev/md0
+    /dev/md0:
+    		Version : 1.2
+      Creation Time : Fri Apr 19 19:49:46 2013
+    	 Raid Level : raid1
+    	 Array Size : 4087475 (3.90 GiB 4.19 GB)
+      Used Dev Size : 4087475 (3.90 GiB 4.19 GB)
+       Raid Devices : 2
+      Total Devices : 2
+    	Persistence : Superblock is persistent
+     
+    	Number   Major   Minor   RaidDevice State
+    	   3       8       17        0      active sync   /dev/sdb1
+    	   2       8       33        1      active sync   /dev/sdc1
+    root@debian:/home/xavier# mdadm --grow /dev/md0 -z max
+    mdadm: component size of /dev/md0 has been set to 12280637K
+    root@debian:/home/xavier# mdadm -D /dev/md0
+    /dev/md0:
+    		Version : 1.2
+      Creation Time : Fri Apr 19 19:49:46 2013
+    	 Raid Level : raid1
+    	 Array Size : 12280637 (11.71 GiB 12.58 GB)
+      Used Dev Size : 12280637 (11.71 GiB 12.58 GB)
+       Raid Devices : 2
+      Total Devices : 2
+    	Persistence : Superblock is persistent
+     
+    	Number   Major   Minor   RaidDevice State
+    	   3       8       17        0      active sync   /dev/sdb1
+    	   2       8       33        1      active sync   /dev/sdc1
+    root@debian:/home/xavier# resize2fs /dev/md0
+    resize2fs 1.41.12 (17-May-2010)
+    Le système de fichiers de /dev/md0 est monté sur /media/raid ; le changement de taille doit être effectué en ligne
+    old desc_blocks = 1, new_desc_blocks = 1
+    En train d'effectuer un changement de taille en ligne de /dev/md0 vers 3070159 (4k) blocs.
+    Le système de fichiers /dev/md0 a maintenant une taille de 3070159 blocs.
+     
+    root@debian:/home/xavier# df -h
+    Sys. de fichiers    Taille  Uti. Disp. Uti% Monté sur
+    /dev/md0               12G   74M   12G   1% /media/raid
 
 Et voilà, nous avons doublé la taille de notre raid sans perdre une donnée !
 
@@ -586,126 +544,115 @@ J'ai réinstallé une debian, sur un nouveau système et branché un des disques
 
 En fait, cette étape est superflue dans mon cas car lors de l'installation de mdadm, celui-ci détecte l'array existant et le remonte.
 
-```bash
-root@debian2:/home/xavier# fdisk -l
- 
-Disk /dev/sda: 8388 MB, 8388108288 bytes
-255 heads, 63 sectors/track, 1019 cylinders
-Units = cylinders of 16065 * 512 = 8225280 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-Disk identifier: 0x000ed18d
- 
-   Device Boot      Start         End      Blocks   Id  System
-/dev/sda1   *           1         972     7804928   83  Linux
-Partition 1 does not end on cylinder boundary.
-/dev/sda2             972        1020      384001    5  Extended
-Partition 2 does not end on cylinder boundary.
-/dev/sda5             972        1020      384000   82  Linux swap / Solaris
- 
-Disk /dev/sdb: 12.6 GB, 12582420480 bytes
-255 heads, 63 sectors/track, 1529 cylinders
-Units = cylinders of 16065 * 512 = 8225280 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-Disk identifier: 0x3961ebcf
- 
-   Device Boot      Start         End      Blocks   Id  System
-/dev/sdb1               1        1529    12281661   fd  Linux raid autodetect
-root@debian2:/home/xavier# mdadm
-bash: mdadm : commande introuvable
-root@debian2:/home/xavier# apt-get install mdadm
-Lecture des listes de paquets... Fait
-Construction de l'arbre des dépendances      
-Lecture des informations d'état... Fait
-Les NOUVEAUX paquets suivants seront installés :
-  mdadm
-0 mis à jour, 1 nouvellement installés, 0 à enlever et 0 non mis à jour.
-Il est nécessaire de prendre 451 ko dans les archives.
-Après cette opération, 995 ko d'espace disque supplémentaires seront utilisés.
-Réception de : 1 http://ftp.fr.debian.org/debian/ squeeze/main mdadm i386 3.1.4-1+8efb9d1+squeeze1 [451 kB]
-451 ko réceptionnés en 0s (998 ko/s)
-Préconfiguration des paquets...
-Sélection du paquet mdadm précédemment désélectionné.
-(Lecture de la base de données... 117583 fichiers et répertoires déjà installés.)
-Dépaquetage de mdadm (à partir de .../mdadm_3.1.4-1+8efb9d1+squeeze1_i386.deb) ...
-Traitement des actions différées (« triggers ») pour « man-db »...
-Paramétrage de mdadm (3.1.4-1+8efb9d1+squeeze1) ...
-Generating array device nodes... done.
-Generating mdadm.conf... done.
-update-initramfs: deferring update (trigger activated)
-Starting MD monitoring service: mdadm --monitor.
-Assembling MD array md0...done (degraded [1/2]).
-Generating udev events for MD arrays...done.
-Traitement des actions différées (« triggers ») pour « initramfs-tools »...
-update-initramfs: Generating /boot/initrd.img-2.6.32-5-686
-root@debian2:/home/xavier# cat /proc/mdstat
-Personalities : [raid1]
-md0 : active raid1 sdb1[3]
-	  12280637 blocks super 1.2 [2/1] [U_]
- 
-unused devices: <none>
-root@debian2:/home/xavier# mount /dev/md0 /mnt/
-root@debian2:/home/xavier# cd /mnt/
-root@debian2:/mnt# ls
-lost+found  toto.txt
-```
+    root@debian2:/home/xavier# fdisk -l
+     
+    Disk /dev/sda: 8388 MB, 8388108288 bytes
+    255 heads, 63 sectors/track, 1019 cylinders
+    Units = cylinders of 16065 * 512 = 8225280 bytes
+    Sector size (logical/physical): 512 bytes / 512 bytes
+    I/O size (minimum/optimal): 512 bytes / 512 bytes
+    Disk identifier: 0x000ed18d
+     
+       Device Boot      Start         End      Blocks   Id  System
+    /dev/sda1   *           1         972     7804928   83  Linux
+    Partition 1 does not end on cylinder boundary.
+    /dev/sda2             972        1020      384001    5  Extended
+    Partition 2 does not end on cylinder boundary.
+    /dev/sda5             972        1020      384000   82  Linux swap / Solaris
+     
+    Disk /dev/sdb: 12.6 GB, 12582420480 bytes
+    255 heads, 63 sectors/track, 1529 cylinders
+    Units = cylinders of 16065 * 512 = 8225280 bytes
+    Sector size (logical/physical): 512 bytes / 512 bytes
+    I/O size (minimum/optimal): 512 bytes / 512 bytes
+    Disk identifier: 0x3961ebcf
+     
+       Device Boot      Start         End      Blocks   Id  System
+    /dev/sdb1               1        1529    12281661   fd  Linux raid autodetect
+    root@debian2:/home/xavier# mdadm
+    bash: mdadm : commande introuvable
+    root@debian2:/home/xavier# apt-get install mdadm
+    Lecture des listes de paquets... Fait
+    Construction de l'arbre des dépendances      
+    Lecture des informations d'état... Fait
+    Les NOUVEAUX paquets suivants seront installés :
+      mdadm
+    0 mis à jour, 1 nouvellement installés, 0 à enlever et 0 non mis à jour.
+    Il est nécessaire de prendre 451 ko dans les archives.
+    Après cette opération, 995 ko d'espace disque supplémentaires seront utilisés.
+    Réception de : 1 http://ftp.fr.debian.org/debian/ squeeze/main mdadm i386 3.1.4-1+8efb9d1+squeeze1 [451 kB]
+    451 ko réceptionnés en 0s (998 ko/s)
+    Préconfiguration des paquets...
+    Sélection du paquet mdadm précédemment désélectionné.
+    (Lecture de la base de données... 117583 fichiers et répertoires déjà installés.)
+    Dépaquetage de mdadm (à partir de .../mdadm_3.1.4-1+8efb9d1+squeeze1_i386.deb) ...
+    Traitement des actions différées (« triggers ») pour « man-db »...
+    Paramétrage de mdadm (3.1.4-1+8efb9d1+squeeze1) ...
+    Generating array device nodes... done.
+    Generating mdadm.conf... done.
+    update-initramfs: deferring update (trigger activated)
+    Starting MD monitoring service: mdadm --monitor.
+    Assembling MD array md0...done (degraded [1/2]).
+    Generating udev events for MD arrays...done.
+    Traitement des actions différées (« triggers ») pour « initramfs-tools »...
+    update-initramfs: Generating /boot/initrd.img-2.6.32-5-686
+    root@debian2:/home/xavier# cat /proc/mdstat
+    Personalities : [raid1]
+    md0 : active raid1 sdb1[3]
+    	  12280637 blocks super 1.2 [2/1] [U_]
+     
+    unused devices: <none>
+    root@debian2:/home/xavier# mount /dev/md0 /mnt/
+    root@debian2:/home/xavier# cd /mnt/
+    root@debian2:/mnt# ls
+    lost+found  toto.txt
 
 Et hop, mdadm a tout remonté lui même.
 
 Voulant tester le cas où tout ne se serait pas si bien passé, je casse l'array existant, vérifie qu'il n'existe plus et tente de le remonter.
 
-```bash
-root@debian2:~# mdadm -S /dev/md0
-mdadm: stopped /dev/md0
-root@debian2:~# cat /proc/mdstat
-Personalities : [raid1]
-unused devices: <none>
-root@debian2:~# mdadm -A /dev/md0 /dev/sdb1
-mdadm: /dev/md0 has been started with 1 drive (out of 2).
-root@debian2:~# cat /proc/mdstat
-Personalities : [raid1]
-md0 : active raid1 sdb1[3]
-	  12280637 blocks super 1.2 [2/1] [U_]
- 
-unused devices: <none>
-root@debian2:~#
-```
-	
+    root@debian2:~# mdadm -S /dev/md0
+    mdadm: stopped /dev/md0
+    root@debian2:~# cat /proc/mdstat
+    Personalities : [raid1]
+    unused devices: <none>
+    root@debian2:~# mdadm -A /dev/md0 /dev/sdb1
+    mdadm: /dev/md0 has been started with 1 drive (out of 2).
+    root@debian2:~# cat /proc/mdstat
+    Personalities : [raid1]
+    md0 : active raid1 sdb1[3]
+    	  12280637 blocks super 1.2 [2/1] [U_]
+     
+    unused devices: <none>
+    root@debian2:~#
+    
 ### Remonter un système pour remettre en place notre raid
 
 Deux solutions, on effectue l'étape précédente et l'on réintègre un second disque dans l'array (tout comme lorsque l'on remplace un disque déffectueux).
 
 Ou, pour éviter de toute reconstruire, on repart sur un système tout propre et on installe mdadm qui va surement tout détecter.
 
-```bash
-TODO
-```
-	
+    TODO
+
+    
 Si ce n'est pas le cas, nous pourrons utiliser le /etc/mdadm/mdadm.conf que nous avons pensé à sauvegarder, et lancer la commande :
 
-```bash
-mdadm --assemble --scan
-```
+    mdadm --assemble --scan
 
 Sinon, on peut retrouver les disques concernés à coup de fdisk et recréer l'array :
 
-```bash
-mdadm --assemble /dev/md0 /dev/sdb1 /dev/sdc1
-```
+    mdadm --assemble /dev/md0 /dev/sdb1 /dev/sdc1
 
 Enfin, on n'oublie pas de sauvegarder sa conf pour le prochain reboot :
 
-```bash
-mdadm --detail --scan --verbose > /etc/mdadm/mdadm.conf
-```
+    mdadm --detail --scan --verbose > /etc/mdadm/mdadm.conf
 
 # Annexe
 
 ## Vérifier l'état du raid
 
     root@debian:/home/xavier# mdadm --detail /dev/md0
-	
+    
 ## Coût de la mise en place de la solution
 
 | Tables        | Cool  |
