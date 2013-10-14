@@ -1,7 +1,7 @@
 ---
 layout: post
 category : astuce
-tagline: "Ajout d'informations dans la status bar"
+tagline: ""
 tags : [latex, beamer]
 ---
 {% include JB/setup %}
