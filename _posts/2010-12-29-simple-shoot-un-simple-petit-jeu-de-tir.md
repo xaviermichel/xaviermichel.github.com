@@ -51,7 +51,7 @@ L'IA apparait aléatoirement dans l'un des quatre angles de la carte. Plus le je
 
 ## Vidéo
 
-![Une partie simple !](/assets/posts/simple-shoot-1.webm)
+[Une partie simple en vidéo !](/assets/posts/simple-shoot-1.webm)
 
 
 # Comment jouer ?
