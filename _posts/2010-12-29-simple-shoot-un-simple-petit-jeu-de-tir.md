@@ -1,6 +1,6 @@
 ---
 layout: post
-category : premiers pas
+category : projet
 tagline: ""
 tags : [javascript, sommaire]
 ---
