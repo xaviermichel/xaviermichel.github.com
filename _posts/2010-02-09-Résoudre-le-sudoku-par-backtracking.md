@@ -10,6 +10,8 @@ Le sudoku... Un jeu que l'on retrouve dans tous les magazines de nos jours :) . 
 
 Cette méthode n'est pas forcément la plus rapide mais s'il existe une solution, on est sur de la trouver. J'ai choisi de l'implémenter en lua car je l'ai codé pour ma PSP dans mes heures perdues.
 
+*****
+
 # Principe
 
 Le principe du backtracking est d'essayer de mettre une valeur dans une case, si cette valeur est possible dans la configuration actuelle du sudoku on continue avec la case suivante. Si la valeur n'est pas correcte on passe à une autre valeur dans cette même case. Si on a essayé toutes les valeurs possibles c'est que l'on s'est trompé avant (ou qu'il n'y a pas de solutions).

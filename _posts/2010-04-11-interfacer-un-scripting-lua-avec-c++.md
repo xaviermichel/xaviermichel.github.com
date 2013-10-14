@@ -8,6 +8,8 @@ tags : [scripting, lua, c++, luna]
 
 Comme je n'ai pas trouvé de documents assez simple à comprendre sur le net, je vais ici détailler comment on peut utiliser lua comme langage de script associé à C++.
 
+*****
+
 # Un première classe de base
 
 Pour commencer, créons une classe simple (Foo pour être original ;) ) qui va posséder un attribut toto (un entier) et quelques méthodes simples (getter, setter, et incrémentation).
