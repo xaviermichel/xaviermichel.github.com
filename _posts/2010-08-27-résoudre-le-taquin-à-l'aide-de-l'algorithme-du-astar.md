@@ -8,7 +8,7 @@ tags : [taquin, A*, python, c++]
 
 Le taquin est un jeu qui nous taquine. Vous connaissez le principe j'en suis sûr, on retrouve ce problème dans plein de petits jeux stupides (par exemple dans "où est charlie" que j'ai téléchargé sur mon téléphone).
 
-Voyons comment résoudre le taquin sans ce prendre la tête, avec l'aide de l'outil informatique et de l'algorithme A*.
+Voyons comment résoudre le taquin sans ce prendre la tête, avec l'aide de l'outil informatique et de l'algorithme Astar.
 
 *****
 
@@ -531,7 +531,7 @@ Voici la résolution proposé pour la taquin en entrée :
     6 7 8 
     /home/xavier/foo/prog/py-build-desktop/py s'est terminé avec le code 0
 
-Il nous a trouvé une solution. Mais, parce qu'il y a toujours un mais, il semblerais que le programme peine a trouver la solution dans certains cas (ce qui n'est pas terrible pour un simple taquin de 3x3) ; il reste donc pas mal de boulot. En réalité, il affiche "j'ai trouvé une solution " mais il n'arrive pas à remonter le "chemin" du A*. A voir...
+Il nous a trouvé une solution. Mais, parce qu'il y a toujours un mais, il semblerais que le programme peine a trouver la solution dans certains cas (ce qui n'est pas terrible pour un simple taquin de 3x3) ; il reste donc pas mal de boulot. En réalité, il affiche "j'ai trouvé une solution " mais il n'arrive pas à remonter le "chemin" du Astar. A voir...
 
 # Annexe, comparaison des performances
 
