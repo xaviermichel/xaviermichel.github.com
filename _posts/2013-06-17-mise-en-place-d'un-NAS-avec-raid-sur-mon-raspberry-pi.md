@@ -664,9 +664,7 @@ Enfin, on n'oublie pas de sauvegarder sa conf pour le prochain reboot :
 
 
 ***
-
 >*Migration commentaires :*
->
 >
 >> soulfire82, le 11/09/2013 à 22:29
 >> Bonjour,
@@ -688,5 +686,4 @@ Enfin, on n'oublie pas de sauvegarder sa conf pour le prochain reboot :
 >> Il faut donc mieux éviter de débrancher le disque wink . Sinon, il faut stopper le raid au niveau logiciel avant de débrancher le disque.
 >> 
 >> Xavier
-
 ***

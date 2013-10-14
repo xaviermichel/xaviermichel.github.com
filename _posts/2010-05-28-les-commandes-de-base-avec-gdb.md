@@ -1,6 +1,6 @@
 ---
 layout: post
-category : Premiers pas
+category : premiers pas
 tagline: ""
 tags : [débogueur, gdb]
 ---
