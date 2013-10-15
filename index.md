@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Xavier MICHEL
-tagline: Mon portfolio : mes réalisations et plus !
+title: Mon portfolio
+tagline: Mes réalisations et plus !
 ---
 {% include JB/setup %}
 
