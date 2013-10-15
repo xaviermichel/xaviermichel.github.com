@@ -90,7 +90,48 @@ Nous avons fait le tour des fonctionnalités, il s'agit d'un programme assez sim
 
 Si vous avez des questions, des idées d'amélioration je vous écoute !
 
- 
+***
+>*Migration commentaires :*
+>
+>
+>>Dragonangel, le 12/07/2011 à 11:36
+>>Bonjour,
+>>
+>>Tout d'abord, félicitation pour cette appli vraiment efficace.
+>>
+>>Si je peux laisser une idée, ce serait d'y ajouter un widget qui reprendrait les prochain annif.
+>>
+>>Grand merci en tout cas
+>
+> ***
+>
+>>Xavier, le 13/07/2011 à 14:00
+>>Merci beaucoup
+>>
+>>Pour le widget, c'est une bonne idée. Je n'ai jamais essayé d'en faire alors ce sera l'occasion ! Je prévois donc d'essayer de faire ça dans un futur plus ou moins proche.
+>
+> ***
+>
+>>Chichou, le 11/08/2011 à 09:47
+>>Sympa ton nouveau site !
+>>
+>>Si je peux me permettre pourquoi ne pas tenter le postage sur le market ?
+>>
+>>Bonne vacances en tout cas mon petit !
+>
+> ***
+>
+>>Xavier, le 12/08/2011 à 22:04
+>>Merci Chichou 
+>>
+>>Je n'ai pas tenté le postage car je n'ai pas de compte market, après je pensais en créer un mais quand j'aurai quelques applications à poster dessus déjà...
+>>
+>>Je n'ai pas encore eu le temps de me pencher sur le widget (vacances).
+>>
+>>Bonnes vacances à toi aussi !
+>
+***
+
 
  
  
