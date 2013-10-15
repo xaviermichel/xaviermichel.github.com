@@ -1,6 +1,6 @@
 ---
 layout: post
-category : rapsberry pi
+category : tutoriel
 tagline: ""
 tags : [raid 1, NAS, raspberry pi]
 ---
