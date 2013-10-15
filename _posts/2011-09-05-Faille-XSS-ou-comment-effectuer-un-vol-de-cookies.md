@@ -1,6 +1,6 @@
 ---
 layout: post
-category : astuce
+category : tutoriel
 tagline: ""
 tags : [latex]
 ---
