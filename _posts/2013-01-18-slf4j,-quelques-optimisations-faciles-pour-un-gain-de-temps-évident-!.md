@@ -184,7 +184,7 @@ private static Logger logger = LoggerFactory.getLogger(ProfilingEleveServiceTest
 
 Pour l’exécution, on va juste lancer cette méthode "test". Là, surprise (ou pas), le temps d’exécution est de plus de 4 minutes !
 
-    [INFO] Aucune optimisation ............................... SUCCESS [4:21.295s]
+    Aucune optimisation : 4:21.295s
 	
 Mais pourquoi ? On ne log aucun message... La réponse est simple, même si les logs ne sont pas actifs, la jvm doit tout de même faire des traitements lors de l'appel aux méthodes trace(...), debug(...).
 
@@ -262,7 +262,7 @@ Il est beaucoup plus judicieux d'utiliser un StringBuilder :
 
 Une plutôt très bonne surprise...
 
-    [INFO] Utilisation d'un string builder ................... SUCCESS [3.638s]
+    Utilisation d'un string builder : 3.638s
 	
 Pas mal du tout ! :D
 
@@ -290,7 +290,7 @@ Pour éviter ces concaténations qui peuvent être extrêmement nombreuses
 
 Et là ça cartonne !
 
-    [INFO] Passage en reference de l'object au logger ........ SUCCESS [1.509s]
+    Passage en reference de l'object au logger : 1.509s
 
 	
 # Les deux optimisations en même temps ?
@@ -298,9 +298,9 @@ Et là ça cartonne !
 Bonne idée ! Ainsi sera moins pénalisé en performance si on doit afficher l'objet. Par contre, dans l'état actuel des choses ça n'ira pas plus vite comme on a fait disparaître l'appel à toString.
 
 En résumé :
-    [INFO] Aucune optimisation ............................... SUCCESS [4:11.994s]
-    [INFO] Utilisation d'un string builder ................... SUCCESS [3.819s]
-    [INFO] Passage en reference de l'object au logger ........ SUCCESS [1.580s]
+    Aucune optimisation : 4:11.994s
+    Utilisation d'un string builder : 3.819s
+    Passage en reference de l'object au logger : 1.580s
 	
 J’espère que ces optimisations faciles à mettre en place vous permettront de booster vos performances ;)
 
