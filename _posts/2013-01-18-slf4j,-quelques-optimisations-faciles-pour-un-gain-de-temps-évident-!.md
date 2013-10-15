@@ -107,7 +107,7 @@ Pour commencer, j'ai défini un POJO qui va me servir pour faire mes tests.
     	// tous les getters / settes
     	//
     
-	}
+    }
 	
 J'ai ensuite mis en place un petit bout de code afin d'utiliser un peu ce POJO :
 
