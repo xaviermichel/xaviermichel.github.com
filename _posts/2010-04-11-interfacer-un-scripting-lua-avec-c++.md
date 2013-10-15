@@ -1,6 +1,6 @@
 ---
 layout: post
-category : scripting
+category : premiers pas
 tagline: ""
 tags : [scripting, lua, c++, luna]
 ---
