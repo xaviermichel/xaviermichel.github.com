@@ -278,7 +278,7 @@ Ce logiciel est open source, vous pouvez récupérer les sources sur notre [dép
 >>
 >>Merci beaucoup pour votre aide.
 >>PS :
->>La seule autre appli «GED perso» que j'ai trouvée, est une appli sous Python (donc aussi multi-plateforme) MALODOS :
+>>La seule autre appli "GED perso" que j'ai trouvée, est une appli sous Python (donc aussi multi-plateforme) MALODOS :
 >>https://sites.google.com/site/malodospage/home
 >
 > ***
@@ -362,7 +362,7 @@ Ce logiciel est open source, vous pouvez récupérer les sources sur notre [dép
 > ***
 >
 >>YVES, le 11/09/2013 à 11:57
->>La version 4.3 lancée sous windows vista, j'obtiens "[a java Exception has occured]" et le logiciel ne s'ouvre pas.
+>>La version 4.3 lancée sous windows vista, j'obtiens "a java Exception has occured" et le logiciel ne s'ouvre pas.
 >>
 >>Y a-t-il quelque chose à faire de manière spécifique pour obtenir un bon fonctionnement.
 >>
@@ -407,7 +407,7 @@ Ce logiciel est open source, vous pouvez récupérer les sources sur notre [dép
 >>
 >>A tout hasard, et si vous le souhaitez, pourriez vous à l'occasion m'envoyer le fichier de logs ("simple_ged.log", qui doit être dans le répertoire d’exécution) pour que je vois si une erreur apparaît ? Il s'agit d'un fichier texte avec des informations concernant l'execution.
 >>
->>Vous pouvez me l'envoyer par message privé xavier.michel.mx440 [at] gmail.com si cela vous convient.
+>>Vous pouvez me l'envoyer par message privé <xavier.michel.mx440@gmail.com> si cela vous convient.
 >>
 >>Xavier
 >
