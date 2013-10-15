@@ -92,7 +92,7 @@ Ce logiciel est open source, vous pouvez récupérer les sources sur notre [dép
 >>
 >>Bref, l'idée pour moi c'est vraiment de consolider les bases avant qu'il ne soit utilisable dans un cadre industriel.
 >>
->>@mcrehange : je vous fais une réponse plus complète par courriel.
+>>mcrehange : je vous fais une réponse plus complète par courriel.
 >
 > ***
 >
@@ -182,9 +182,9 @@ Ce logiciel est open source, vous pouvez récupérer les sources sur notre [dép
 >>Xavier, le 29/01/2013 à 19:47
 >>Bonjour,
 >>
->>@Jonathan, comme c'est en java c'est multi-platefome grin ... Du moins en théorie  oh oh car il est vrai que tout est testé sous windows mais que le scanner par exemple n'est pas utilisable sous linux (je n'ai pas trouvé de solution idéale...).
+>>Jonathan, comme c'est en java c'est multi-platefome grin ... Du moins en théorie  oh oh car il est vrai que tout est testé sous windows mais que le scanner par exemple n'est pas utilisable sous linux (je n'ai pas trouvé de solution idéale...).
 >>
->>@SadE, merci pour ce retour très encourageant grin Je vais essayer de faire évoluer le logiciel régulièrement. Pour répondre plus précisément à tes questions :
+>>SadE, merci pour ce retour très encourageant grin Je vais essayer de faire évoluer le logiciel régulièrement. Pour répondre plus précisément à tes questions :
 >>- Une gestion des mots clés comme tu la propose est une bonne idée, je le mets dans ma TODO liste  tongue rolleye
 >>- Pouvoir importer les documents via une liste tampon... Ce serait le rôle d'un plugin dit "worker", la possibilité de produire des plugins plus poussés est prévu dans la prochaine version.
 >>- Cryptage des documents : pas à l’ordre du jour, comme les documents sont stockés en local uniquement ça n'a pas d'intérêt. Quand on pourra synchroniser ses données sur un serveur distant, cela aura du sens.
@@ -327,7 +327,7 @@ Ce logiciel est open source, vous pouvez récupérer les sources sur notre [dép
 >>
 >>J'ai créé une page wiki afin de résumer les étapes d'installation.
 >>
->>@Mohammed, je n'ai pas encore commencé à regarder cet aspect et je ne peux donc pas te conseiller à ce sujet.
+>>Mohammed, je n'ai pas encore commencé à regarder cet aspect et je ne peux donc pas te conseiller à ce sujet.
 >>
 >>J'en profite pour relancer mon appel à l'aide si vous voulez m'aider à faire évoluer le projet  smile
 >>
