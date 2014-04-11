@@ -42,7 +42,7 @@ A l'heure où le cloud computing se développe, je préfère avoir mes documents
 
 # Téléchargement et installation
 
-En résumé, on [télécharge simple EDM]() ici puis on extrait le zip téléchargé et on lance "simple-edm-windows-starter.cmd.
+En résumé, on [télécharge simple EDM](https://github.com/xaviermichel/simple-edm/releases) ici puis on extrait le zip téléchargé et on lance "simple-edm-windows-starter.cmd.
 
 Si vous rencontrer une difficulté ou si vous voulez proposer une fonctionnalité, n'hésitez pas à me contacter via les commentaires.
 
