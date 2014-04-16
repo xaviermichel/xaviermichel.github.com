@@ -92,3 +92,5 @@ Il ne nous reste qu'a remplacer nos cookies par ceux de la victime pour se faire
 
 Pour plus de détails, voir l’article sur [développez](http://julien-pauli.developpez.com/tutoriels/securite/developpement-web-securite/?page=xss).
 
+
+[test 404](/non-existing-file).
