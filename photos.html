@@ -1,0 +1,33 @@
+---
+layout: nil
+title : Google photo
+---
+<script>
+   var ALBUM_ID = '6311261520529284833';
+</script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<link href="http://cdnjs.cloudflare.com/ajax/libs/nanogallery/5.10.3/css/nanogallery.min.css" rel="stylesheet">
+<link href="http://cdnjs.cloudflare.com/ajax/libs/nanogallery/5.10.3/css/themes/clean/nanogallery_clean.min.css" rel="stylesheet">
+<link href="http://cdnjs.cloudflare.com/ajax/libs/nanogallery/5.10.3/css/themes/light/nanogallery_light.min.css" rel="stylesheet">
+ 
+<script src="http://cdnjs.cloudflare.com/ajax/libs/nanogallery/5.10.3/jquery.nanogallery.min.js"></script>
+ 
+<div id="nanoGallery2"></div>
+ 
+<script>
+$(document).ready(function () {
+$("#nanoGallery2").nanoGallery({
+thumbnailWidth: 'auto',
+thumbnailHeight: 250,
+userID: '115015789879074162946', kind:'picasa',
+album: ALBUM_ID,
+colorScheme: 'none',
+thumbnailHoverEffect: [{ name: 'labelAppear75', duration: 300 }],
+theme: 'light',
+thumbnailGutterWidth : 0,
+thumbnailGutterHeight : 0,
+i18n: { thumbnailImageDescription: 'Agrandir la photo' },
+thumbnailLabel: { display: true, position: 'overImageOnMiddle', align: 'center' }
+});
+});
+</script>
